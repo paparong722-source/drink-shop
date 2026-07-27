@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>鮮茶飲桑椹洛神冷飲專賣店｜台南友愛街</title>
+<meta name="description" content="鮮茶飲桑椹洛神冷飲專賣店，位於台南友愛街，招牌桑椹檸檬、洛神梅，真材實料新鮮現萃。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFFBF1;
+    --paper:#FFF6E4;
+    --mulberry:#6C2148;
+    --mulberry-deep:#4A1633;
+    --leaf:#4C7A3F;
+    --leaf-light:#8FBF6E;
+    --roselle:#C4374B;
+    --gold:#E3A23A;
+    --ink:#3A2A20;
+    --line: rgba(108,33,72,0.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Noto Sans TC', sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3, .display{
+    font-family:'Zen Maru Gothic','Noto Sans TC', sans-serif;
+    font-weight:900;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+
+  /* ---------- decorative blobs ---------- */
+  .blob{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(2px);
+    opacity:0.5;
+    z-index:0;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:56px 20px 90px;
+    text-align:center;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(143,191,110,0.25), transparent 40%),
+      radial-gradient(circle at 85% 15%, rgba(196,55,75,0.18), transparent 45%),
+      var(--paper);
+  }
+  .crown-row{
+    font-size:13px;
+    letter-spacing:0.3em;
+    color:var(--gold);
+    font-weight:700;
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:clamp(34px, 9vw, 52px);
+    color:var(--mulberry);
+    line-height:1.25;
+    text-shadow: 2px 2px 0 rgba(227,162,58,0.25);
+  }
+  .hero .sub{
+    margin-top:14px;
+    font-size:15px;
+    color:var(--mulberry-deep);
+    opacity:0.85;
+    letter-spacing:0.08em;
+  }
+  .badge-line{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:22px;
+  }
+  .badge{
+    background:#fff;
+    border:1.5px solid var(--line);
+    border-radius:999px;
+    padding:6px 16px;
+    font-size:13px;
+    color:var(--mulberry);
+    font-weight:700;
+    box-shadow:0 2px 0 rgba(108,33,72,0.08);
+  }
+
+  /* the signature cup */
+  .cup-wrap{
+    margin:38px auto 0;
+    width:150px;
+    height:190px;
+    position:relative;
+    animation: sway 3.2s ease-in-out infinite;
+  }
+  @keyframes sway{
+    0%,100%{ transform: rotate(-2.5deg); }
+    50%{ transform: rotate(2.5deg); }
+  }
+  .cup{
+    width:100%;
+    height:100%;
+  }
+  .straw{
+    position:absolute;
+    top:-38px;
+    left:56%;
+    width:14px;
+    height:70px;
+    background:linear-gradient(90deg,#ffffff, #f4d9e0 45%, #ffffff);
+    border:2px solid var(--roselle);
+    border-radius:8px;
+    transform:rotate(8deg);
+  }
+
+  .scroll-cta{
+    margin-top:34px;
+  }
+  .btn{
+    display:inline-block;
+    background:var(--mulberry);
+    color:#fff;
+    padding:13px 30px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:15px;
+    box-shadow:0 6px 0 var(--mulberry-deep);
+    transition:transform .12s ease;
+  }
+  .btn:active{ transform:translateY(4px); box-shadow:0 2px 0 var(--mulberry-deep); }
+  .btn.ghost{
+    background:#fff;
+    color:var(--mulberry);
+    border:2px solid var(--mulberry);
+    box-shadow:0 6px 0 var(--line);
+  }
+  .cta-row{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:28px;}
+
+  /* wave divider */
+  .wave{
+    display:block;
+    width:100%;
+    height:auto;
+    margin-top:-2px;
+  }
+
+  /* ---------- SECTION shells ---------- */
+  section{ position:relative; padding:64px 20px; }
+  .section-head{ text-align:center; margin-bottom:36px; }
+  .eyebrow{
+    font-size:12px;
+    letter-spacing:0.35em;
+    color:var(--leaf);
+    font-weight:700;
+    margin-bottom:8px;
+  }
+  .section-head h2{
+    font-size:clamp(24px,6vw,32px);
+    color:var(--mulberry);
+  }
+  .section-head p{ margin-top:10px; color:#6b5546; font-size:14px;}
+
+  /* ---------- SIGNATURE PICKS ---------- */
+  .picks{
+    background:var(--cream);
+  }
+  .pick-scroll{
+    display:flex;
+    gap:16px;
+    overflow-x:auto;
+    padding:8px 4px 20px;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+  }
+  .pick-scroll::-webkit-scrollbar{ display:none; }
+  .pick-card{
+    flex:0 0 auto;
+    scroll-snap-align:start;
+    width:150px;
+    background:#fff;
+    border-radius:22px;
+    padding:18px 14px 16px;
+    text-align:center;
+    border:1px solid var(--line);
+    box-shadow:0 8px 18px rgba(108,33,72,0.07);
+    position:relative;
+  }
+  .pick-crown{ position:absolute; top:-14px; left:50%; transform:translateX(-50%); font-size:22px;}
+  .pick-glass{
+    width:56px; height:70px; margin:14px auto 12px;
+  }
+  .pick-card h3{ font-size:15px; color:var(--mulberry-deep); font-weight:700; font-family:'Noto Sans TC';}
+  .pick-card .tag{ font-size:11px; color:var(--leaf); margin-top:4px; font-weight:700;}
+
+  /* ---------- MENU ---------- */
+  .menu-wrap{
+    background:var(--paper);
+  }
+  .menu-tabs{
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    padding-bottom:14px;
+    margin-bottom:8px;
+    -webkit-overflow-scrolling:touch;
+  }
+  .menu-tabs::-webkit-scrollbar{ display:none; }
+  .tab-btn{
+    flex:0 0 auto;
+    padding:9px 16px;
+    border-radius:999px;
+    border:1.5px solid var(--line);
+    background:#fff;
+    font-size:13px;
+    font-weight:700;
+    color:var(--mulberry-deep);
+    cursor:pointer;
+  }
+  .tab-btn.active{
+    background:var(--mulberry);
+    color:#fff;
+    border-color:var(--mulberry);
+  }
+  .menu-cat{
+    display:none;
+    background:#fff;
+    border-radius:22px;
+    border:1px solid var(--line);
+    padding:22px 20px 8px;
+    margin-bottom:18px;
+  }
+  .menu-cat.show{ display:block; }
+  .menu-cat h3{
+    color:var(--mulberry);
+    font-size:19px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:6px;
+    font-family:'Noto Sans TC';
+  }
+  .menu-cat h3::before{
+    content:"";
+    width:8px; height:8px;
+    background:var(--leaf-light);
+    border-radius:50%;
+    display:inline-block;
+  }
+  .col-head{
+    display:flex;
+    justify-content:flex-end;
+    gap:26px;
+    font-size:11px;
+    color:#9a8a7a;
+    padding:0 2px;
+    border-bottom:1px dashed var(--line);
+    padding-bottom:6px;
+  }
+  .col-head span{ width:24px; text-align:center;}
+  .menu-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:11px 2px;
+    border-bottom:1px dashed var(--line);
+    font-size:14.5px;
+  }
+  .menu-row:last-child{ border-bottom:none; }
+  .menu-row .name{ color:var(--ink); font-weight:500; }
+  .menu-row .prices{
+    display:flex;
+    gap:26px;
+    font-weight:700;
+    color:var(--mulberry-deep);
+    font-family:'Noto Sans TC';
+  }
+  .menu-row .prices span{ width:24px; text-align:center; }
+  .note-strip{
+    margin-top:10px;
+    background:#FBF0E4;
+    border-radius:14px;
+    padding:12px 14px;
+    font-size:13px;
+    color:#7a5a3a;
+  }
+
+  .extra-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    margin-top:6px;
+  }
+  .extra-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:16px;
+  }
+  .extra-card h4{ color:var(--roselle); font-size:14px; margin-bottom:6px; font-family:'Noto Sans TC';}
+  .extra-card p{ font-size:13px; color:#6b5546; }
+
+  /* ---------- MULBERRY SPOTLIGHT ---------- */
+  .spotlight{
+    background:linear-gradient(160deg, var(--mulberry) 0%, var(--mulberry-deep) 100%);
+    color:#fff;
+    border-radius:28px;
+    margin:0 4px;
+    padding:40px 24px;
+    position:relative;
+    overflow:hidden;
+  }
+  .spotlight::before{
+    content:"";
+    position:absolute; inset:0;
+    background:radial-gradient(circle at 80% 0%, rgba(255,255,255,0.08), transparent 60%);
+  }
+  .spotlight .eyebrow{ color:var(--gold); }
+  .spotlight h2{ color:#fff; }
+  .spotlight p{ color:rgba(255,255,255,0.85); font-size:14px; margin-top:10px;}
+  .spot-grid{
+    display:flex;
+    gap:14px;
+    margin-top:26px;
+    flex-wrap:wrap;
+  }
+  .spot-card{
+    flex:1 1 130px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.18);
+    border-radius:18px;
+    padding:16px;
+    text-align:center;
+  }
+  .spot-card .big{ font-size:22px; font-weight:900; color:var(--gold); }
+  .spot-card .small{ font-size:12px; margin-top:4px; color:rgba(255,255,255,0.75);}
+
+  /* ---------- STORE INFO ---------- */
+  .info-wrap{ background:var(--cream); }
+  .info-card{
+    background:#fff;
+    border-radius:24px;
+    border:1px solid var(--line);
+    padding:26px 22px;
+    max-width:520px;
+    margin:0 auto;
+  }
+  .info-row{
+    display:flex;
+    gap:14px;
+    padding:14px 0;
+    border-bottom:1px dashed var(--line);
+    align-items:flex-start;
+  }
+  .info-row:last-child{ border-bottom:none; }
+  .info-icon{
+    width:38px; height:38px;
+    flex:0 0 38px;
+    border-radius:50%;
+    background:#F4E9DC;
+    display:flex; align-items:center; justify-content:center;
+    font-size:18px;
+  }
+  .info-row .label{ font-size:12px; color:#9a8a7a; }
+  .info-row .val{ font-size:15px; font-weight:700; color:var(--mulberry-deep); margin-top:2px;}
+  .info-row a.val{ color:var(--mulberry-deep); }
+
+  footer{
+    text-align:center;
+    padding:30px 20px 40px;
+    font-size:12px;
+    color:#b2a08e;
+  }
+  footer .heart{ color:var(--roselle); }
+
+  @media (min-width:700px){
+    .menu-cat{ }
+    .pick-scroll{ justify-content:center; flex-wrap:wrap; overflow:visible; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="crown-row">👑 台南友愛街 · 手工鮮萃 · 招牌桑椹 👑</div>
+  <h1>鮮茶飲<br>桑椹洛神冷飲專賣店</h1>
+  <p class="sub">嚴選真材實料・新鮮現萃・自然好滋味</p>
+
+  <div class="badge-line">
+    <span class="badge">100% 顧客推薦</span>
+    <span class="badge">當日現煮</span>
+    <span class="badge">友愛街 307 號</span>
+  </div>
+
+  <div class="cup-wrap">
+    <div class="straw"></div>
+    <svg class="cup" viewBox="0 0 150 190" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="liquid" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#8a2050"/>
+          <stop offset="100%" stop-color="#4a1030"/>
+        </linearGradient>
+      </defs>
+      <path d="M20 30 L130 30 L112 175 Q75 190 38 175 Z" fill="#fdf9f2" stroke="#6C2148" stroke-width="3"/>
+      <path d="M27 55 L123 55 L112 175 Q75 190 38 175 Z" fill="url(#liquid)"/>
+      <circle cx="55" cy="80" r="7" fill="#fff" opacity="0.85"/>
+      <circle cx="90" cy="100" r="9" fill="#fff" opacity="0.7"/>
+      <circle cx="65" cy="130" r="6" fill="#fff" opacity="0.8"/>
+      <circle cx="100" cy="140" r="7" fill="#fff" opacity="0.75"/>
+      <path d="M20 30 L130 30 L124 46 Q75 58 26 46 Z" fill="#fff" stroke="#6C2148" stroke-width="3"/>
+      <ellipse cx="112" cy="60" rx="16" ry="10" fill="#E8F3DA" stroke="#4C7A3F" stroke-width="2"/>
+      <circle cx="30" cy="20" r="4" fill="#E3A23A"/>
+    </svg>
+  </div>
+
+  <div class="cta-row">
+    <a class="btn" href="tel:0622859983">📞 電話訂購</a>
+    <a class="btn ghost" href="#menu">看完整菜單</a>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none">
+  <path d="M0,32 C240,60 480,0 720,20 C960,40 1200,10 1440,30 L1440,60 L0,60 Z" fill="#FFF6E4"/>
+</svg>
+
+<!-- ================= SIGNATURE PICKS ================= -->
+<section class="picks">
+  <div class="section-head">
+    <div class="eyebrow">TOP 人氣推薦</div>
+    <h2>鮮茶飲 招牌五選</h2>
+    <p>每一杯都嘛係老饕熟客的心頭好</p>
+  </div>
+  <div class="pick-scroll">
+    <div class="pick-card">
+      <div class="pick-crown">👑</div>
+      <svg class="pick-glass" viewBox="0 0 56 70"><rect x="8" y="16" width="40" height="48" rx="4" fill="#7A1F45"/><rect x="8" y="8" width="40" height="10" rx="4" fill="#fff" stroke="#7A1F45" stroke-width="2"/></svg>
+      <h3>桑椹檸檬</h3>
+      <div class="tag">酸V酸V 顏色好美</div>
+    </div>
+    <div class="pick-card">
+      <div class="pick-crown">👑</div>
+      <svg class="pick-glass" viewBox="0 0 56 70"><rect x="8" y="16" width="40" height="48" rx="4" fill="#C9863F"/><rect x="8" y="8" width="40" height="10" rx="4" fill="#fff" stroke="#7A1F45" stroke-width="2"/></svg>
+      <h3>焦糖奶茶</h3>
+      <div class="tag">焦糖香氣好療癒</div>
+    </div>
+    <div class="pick-card">
+      <div class="pick-crown">👑</div>
+      <svg class="pick-glass" viewBox="0 0 56 70"><rect x="8" y="16" width="40" height="48" rx="4" fill="#C4374B"/><rect x="8" y="8" width="40" height="10" rx="4" fill="#fff" stroke="#7A1F45" stroke-width="2"/></svg>
+      <h3>洛神梅</h3>
+      <div class="tag">開胃解膩必喝</div>
+    </div>
+    <div class="pick-card">
+      <div class="pick-crown">👑</div>
+      <svg class="pick-glass" viewBox="0 0 56 70"><rect x="8" y="16" width="40" height="48" rx="4" fill="#E3B84A"/><rect x="8" y="8" width="40" height="10" rx="4" fill="#fff" stroke="#7A1F45" stroke-width="2"/></svg>
+      <h3>蜂蜜檸檬</h3>
+      <div class="tag">酸甜清爽解渴</div>
+    </div>
+    <div class="pick-card">
+      <div class="pick-crown">👑</div>
+      <svg class="pick-glass" viewBox="0 0 56 70"><rect x="8" y="16" width="40" height="48" rx="4" fill="#D9BFA0"/><rect x="8" y="8" width="40" height="10" rx="4" fill="#fff" stroke="#7A1F45" stroke-width="2"/></svg>
+      <h3>古早味鮮奶茶</h3>
+      <div class="tag">焦香濃郁順口不膩</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MULBERRY SPOTLIGHT ================= -->
+<section style="padding-top:0;">
+  <div class="spotlight">
+    <div class="eyebrow">熟客老饕最愛</div>
+    <h2>桑椹原汁 Mulberry Juice</h2>
+    <p>新鮮熬煮・真材實料・自然美味・營養滿分。採桑椹👉洗桑椹👉煮桑椹👉裝瓶，登登～好喝的桑椹原汁現身啦！</p>
+    <div class="spot-grid">
+      <div class="spot-card">
+        <div class="big">$350</div>
+        <div class="small">桑椹原汁 1瓶 1000cc</div>
+      </div>
+      <div class="spot-card">
+        <div class="big">$1000</div>
+        <div class="small">桑椹原汁 3瓶　划算組</div>
+      </div>
+      <div class="spot-card">
+        <div class="big">$80 / $150</div>
+        <div class="small">桑椹蜜餞　1包 / 2包</div>
+      </div>
+    </div>
+    <div class="cta-row" style="margin-top:26px;">
+      <a class="btn" style="background:#fff; color:var(--mulberry); box-shadow:0 6px 0 rgba(0,0,0,0.15);" href="tel:0622859983">📞 06-2285983 訂購專線</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MENU ================= -->
+<section class="menu-wrap" id="menu">
+  <div class="section-head">
+    <div class="eyebrow">FULL MENU</div>
+    <h2>完整菜單</h2>
+    <p>M / L 兩種杯型・去冰溫熱 +5元・加料任選 +15元</p>
+  </div>
+
+  <div class="menu-tabs" id="tabs"></div>
+  <div id="menu-body"></div>
+
+  <div class="extra-grid">
+    <div class="extra-card">
+      <h4>🧊 冰量 / 冷熱</h4>
+      <p>去冰・微冰・溫・熱　均 +5 元</p>
+    </div>
+    <div class="extra-card">
+      <h4>➕ 加料區</h4>
+      <p>珍珠／椰果／魔力水晶／梅子／布丁／檸檬／愛玉／鮮奶加倍　每項 +15 元</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STORE INFO ================= -->
+<section class="info-wrap">
+  <div class="section-head">
+    <div class="eyebrow">VISIT US</div>
+    <h2>店家資訊</h2>
+  </div>
+  <div class="info-card">
+    <div class="info-row">
+      <div class="info-icon">📍</div>
+      <div>
+        <div class="label">地址</div>
+        <a class="val" target="_blank" href="https://www.google.com/maps/search/?api=1&query=%E5%8F%8B%E6%84%9B%E8%A1%97307%E8%99%9F%20%E5%8F%B0%E5%8D%97">友愛街307號，台南市 700</a>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">📞</div>
+      <div>
+        <div class="label">訂購專線</div>
+        <a class="val" href="tel:0622859983">06-2285983</a>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">🕒</div>
+      <div>
+        <div class="label">營業狀態</div>
+        <div class="val">營業中</div>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">⭐</div>
+      <div>
+        <div class="label">顧客評價</div>
+        <div class="val">100% 推薦（14 則評論）</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  鮮茶飲桑椹洛神冷飲專賣店 ｜ 台南市友愛街307號 <span class="heart">♥</span> 手工鮮萃，每天都想喝
+</footer>
+
+<script>
+const menu = [
+  { cat:"茗茶系列", items:[
+    ["阿薩姆紅茶",20,25],["古早味紅茶",20,25],["茉香綠茶",20,25],["四季春青茶",20,25],
+    ["炭焙烏龍",25,30],["烏龍綠茶",25,30],["黃金麥茶",20,25],["冬瓜茶",20,25],["古早黑糖飲",35,null]
+  ], note:"經典不敗！日常必喝～"},
+  { cat:"特調系列", items:[
+    ["梅子紅茶",30,35],["梅子綠茶",30,35],["蜂蜜紅茶",40,45],["蜂蜜綠茶",40,45],
+    ["薄荷綠茶",35,40],["薄荷汁",35,40],["檸檬綠茶",40,45],["檸檬紅茶",40,45],
+    ["檸檬青茶",40,45],["情人茶",50,60],["阿華田",40,50],["咖啡",50,null]
+  ], note:"梅系列開胃解膩！"},
+  { cat:"花果茶系列", items:[
+    ["百香果汁",25,30],["香橙葡萄",25,30],["薄荷雪泡",40,45],["冬瓜檸檬",40,45],
+    ["洛神花",30,40],["洛神梅",40,50],["桑椹汁",40,50],["桑椹檸檬",50,60],
+    ["蜜茶",35,40],["可樂梅",null,45],["可樂/雪碧",null,35],["可爾必思",40,45],
+    ["鮮檸檬汁",40,45],["鮮桔茶",40,45],["金桔檸檬",40,45],["蜂蜜檸檬汁",50,60]
+  ], note:"水果系每種都想試！"},
+  { cat:"奶茶系列", items:[
+    ["奶香紅茶",30,35],["茉香奶綠",30,35],["奶香青茶",30,35],["薄荷奶茶",35,40],
+    ["薄荷奶綠",40,45],["焦糖奶茶",40,45],["黑糖奶茶",40,45],["QQ奶茶",40,45],
+    ["點子奶茶",40,50],["布丁奶茶",45,50]
+  ]},
+  { cat:"鮮奶系列", items:[
+    ["鮮奶紅茶",40,50],["鮮奶綠茶",40,50],["鮮奶青茶",40,50],["鮮奶烏龍",45,55],
+    ["冬瓜鮮奶",40,50],["桑椹鮮奶",55,60]
+  ], note:"鮮奶超濃郁，喝起來好幸福！"},
+  { cat:"多多系列", items:[
+    ["多多綠茶",45,50],["多多青茶",45,50],["多多檸檬綠",50,60],["檸檬多多",50,60]
+  ], note:"多多控攜手！乳酸感好好喝～"},
+  { cat:"冬季限定", items:[
+    ["燒仙草",45,null],["桂圓紅棗茶",60,null]
+  ], note:"暖心推薦，冬天必備！"}
+];
+
+const tabsEl = document.getElementById('tabs');
+const bodyEl = document.getElementById('menu-body');
+
+menu.forEach((cat, idx)=>{
+  const btn = document.createElement('button');
+  btn.className = 'tab-btn' + (idx===0 ? ' active':'');
+  btn.textContent = cat.cat;
+  btn.onclick = ()=>{
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.menu-cat').forEach(c=>c.classList.remove('show'));
+    document.getElementById('cat-'+idx).classList.add('show');
+  };
+  tabsEl.appendChild(btn);
+
+  const block = document.createElement('div');
+  block.className = 'menu-cat' + (idx===0 ? ' show':'');
+  block.id = 'cat-'+idx;
+
+  let rowsHtml = `<h3>${cat.cat}</h3><div class="col-head"><span>M</span><span>L</span></div>`;
+  cat.items.forEach(([name,m,l])=>{
+    rowsHtml += `<div class="menu-row"><span class="name">${name}</span><span class="prices"><span>${m ?? '—'}</span><span>${l ?? '—'}</span></span></div>`;
+  });
+  if(cat.note){
+    rowsHtml += `<div class="note-strip">💬 ${cat.note}</div>`;
+  }
+  block.innerHTML = rowsHtml;
+  bodyEl.appendChild(block);
+});
+</script>
+
+</body>
+</html>
